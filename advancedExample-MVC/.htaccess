@@ -1,3 +1,9 @@
 #Assign a rule to apache in order to each time a url is written always go to the index first.
 RewriteEngine On
+
+#Solicitud interna archivo css no redirigir a index
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
 RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
