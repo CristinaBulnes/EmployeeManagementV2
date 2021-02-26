@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Error al cargar el recurso</h1>
+    <?php require 'views/header.php'; ?>
+        <h1>Error al cargar el recurso</h1>
+    <?php require 'views/footer.php'; ?>
+
 </body>
 </html>
