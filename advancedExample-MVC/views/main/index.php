@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Esta es la vista de main</h1>
+    <?php require 'views/header.php'; ?>
+        <h1>Welcome to main view</h1>
+    <?php require 'views/footer.php'; ?>
 </body>
 </html>
