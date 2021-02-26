@@ -6,6 +6,6 @@ define ('URL', 'http://localhost/employeeManagement2/EmployeeManagementV2/advanc
 define ('HOST', 'localhost');
 define ('BD', '');
 define ('USER', 'root');
-define ('PASSWORD', );
+define ('PASSWORD', '');
 define ('CHARSET', 'utf8mb4');
 ?>
