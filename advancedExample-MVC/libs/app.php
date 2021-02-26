@@ -1,5 +1,5 @@
 <?php
-//require_once 'controllers/errores.php';
+
 //class to centralize all the app
 class App {
 
@@ -29,6 +29,7 @@ class App {
                 # code...
             }
         } else { //call controller error manager
+            require_once 'controllers/errores.php';
             $controller = new Errores();
         }
     }
