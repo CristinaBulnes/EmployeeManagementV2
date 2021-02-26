@@ -1,5 +1,5 @@
 <?php
-require_once 'controllers/error.php';
+//require_once 'controllers/error.php';
 //class to centralize all the app
 class App {
 
@@ -21,6 +21,13 @@ class App {
         if (file_exists($archivoController)) {
             require_once $archivoController;
             $controller = new $url[0]; // $url[0] == controller name
+
+            //validate method exits and call it
+            if (isset($url[1])) {
+                $controller ->{$url[1]}();
+            }else {
+                # code...
+            }
         } else { //call controller error manager
             $controller = new Error();
         }
