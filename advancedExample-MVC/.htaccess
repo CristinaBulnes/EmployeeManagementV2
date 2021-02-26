@@ -1,0 +1,3 @@
+#Assign a rule to apache in order to each time a url is written always go to the index first.
+RewriteEngine On
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
