@@ -1,8 +1,9 @@
 <?php
 //Main controller
-class Main{
+class Main extends Controller{
 
     function __construct () {
+        parent::__construct();
         echo "<p>Main controller</p>";
     }
 
