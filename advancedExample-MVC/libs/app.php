@@ -1,4 +1,5 @@
 <?php
+require_once 'controllers/error.php';
 //class to centralize all the app
 class App {
 
@@ -12,8 +13,17 @@ class App {
             $url = rtrim($url, '/');
             //Break down each part of the url that are between / and save they into an array
             $url = explode ('/', $url);
-            var_dump($url);
+            //var_dump($url);
 
+        //Charge controller read at url
+        $archivoController = 'controllers/' . $url[0] . '.php';
+        //validate archive exits
+        if (file_exists($archivoController)) {
+            require_once $archivoController;
+            $controller = new $url[0]; // $url[0] == controller name
+        } else { //call controller error manager
+            $controller = new Error();
+        }
     }
 }
 ?>
