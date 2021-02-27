@@ -9,7 +9,7 @@
 <body class="container">
     <?php require 'views/header.php'; ?>
         <h2>Seccion de nuevo</h2>
-        <form action="<?php echo constant('URL');?>/nuevo/registrarAlumno" method="POST">
+        <form action="<?php echo constant('URL');?>nuevo/registrarAlumno" method="POST">
         <div class="mb-3">
             <label for="matricula" class="form-label">Matricula</label>
             <input type="text" name="matricula" id="matricula" class="form-control">

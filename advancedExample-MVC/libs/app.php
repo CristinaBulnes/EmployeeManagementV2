@@ -19,7 +19,8 @@ class App {
         if (empty($url[0])) {
             $archivoController = 'controllers/main.php';
             require_once $archivoController;
-            $controller = new Main ();
+            $controller = new Main (); // view associate is create in the construct
+            $controller->loadModel('main'); //Create model associate if exits
             return false;
         }
 
@@ -28,7 +29,7 @@ class App {
         if (file_exists($archivoController)) {
             require_once $archivoController;
             $controller = new $url[0]; // $url[0] == controller name
-
+            $controller->loadModel($url[0]);
             //validate method exits and call it
             if (isset($url[1])) {
                 $controller ->{$url[1]}();
