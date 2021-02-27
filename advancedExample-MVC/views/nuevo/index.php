@@ -9,6 +9,7 @@
 <body class="container">
     <?php require 'views/header.php'; ?>
         <h2>Seccion de nuevo</h2>
+        <div class="alert mb-3"><?php echo $this->mensaje;?></div>
         <form action="<?php echo constant('URL');?>nuevo/registrarAlumno" method="POST">
         <div class="mb-3">
             <label for="matricula" class="form-label">Matricula</label>
