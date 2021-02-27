@@ -5,5 +5,15 @@ class Controller {
         //echo "<p>Controlador base</p>";
         $this->view = new View();
     }
+//controller check what is recived from the view to work with the specifically model and return the view again 
+    function loadModel ($model) {
+        $url = 'models/'.$model.'model.php';
+
+        if (file_exists($url)) {
+            require $url;
+            $modelName = $model.'Model';
+            $this->model = new $modelName();
+        }
+    }
 }
 ?>
