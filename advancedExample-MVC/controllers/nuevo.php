@@ -4,8 +4,11 @@ class Nuevo extends Controller{
 
     function __construct () {
         parent::__construct();
-        $this->view->render('nuevo/index');
         //echo "<p>Nuevo controller</p>";
+    }
+
+    function render () {
+        $this->view->render('nuevo/index');
     }
 
     function registrarAlumno () {

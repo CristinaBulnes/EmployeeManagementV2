@@ -21,6 +21,7 @@ class App {
             require_once $archivoController;
             $controller = new Main (); // view associate is create in the construct
             $controller->loadModel('main'); //Create model associate if exits
+            $controller->render();
             return false;
         }
 
@@ -31,10 +32,11 @@ class App {
             $controller = new $url[0]; // $url[0] == controller name
             $controller->loadModel($url[0]);
             //validate method exits and call it
-            if (isset($url[1])) {
+            //each method has to charge a specific view
+            if (isset($url[1])) { 
                 $controller ->{$url[1]}();
-            }else {
-                # code...
+            }else { // if there is not a method to execute you will execute render 
+                $controller->render();
             }
         } else { //call controller error manager
             require_once 'controllers/errores.php';

@@ -4,8 +4,11 @@ class Consulta extends Controller{
 
     function __construct () {
         parent::__construct();
-        $this->view->render('consulta/index');
         //echo "<p>Main controller</p>";
+    }
+
+    function render () {
+        $this->view->render('consulta/index');
     }
 }
 ?>
