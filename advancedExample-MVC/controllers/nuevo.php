@@ -7,5 +7,6 @@ class Nuevo extends Controller{
         $this->view->render('nuevo/index');
         //echo "<p>Main controller</p>";
     }
+}
 
 ?>
