@@ -22,13 +22,13 @@
         <tbody>
         <?php
             foreach ($this->datos as $row) {
-                echo "<tr>
-                        <td>{$row->matricula}</th>
-                        <td>{$row->nombre}</td>
-                        <td>{$row->apellido}</td>
-                        <td><a href=>Editar</a></td>
-                        <td><a href=>Eliminar</a></td>
-                    </tr>";
+                echo '<tr>
+                        <td>'.$row->matricula.'</th>
+                        <td>'.$row->nombre.'</td>
+                        <td>'.$row->apellido.'</td>
+                        <td><a href='.constant('URL').'consulta/verAlumno/'.$row->matricula.'>Editar</a></td>
+                        <td><a href='.constant('URL').'consulta/eliminarAlumno/'.$row->matricula.'>Eliminar</a></td>
+                    </tr>';
             }
             ?>
             </tbody>
