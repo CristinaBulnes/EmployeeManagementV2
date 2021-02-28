@@ -11,13 +11,13 @@ class NuevoModel extends Model {
         try {
             $query = $this->db->connect()->prepare('INSERT INTO ALUMNOS (MATRICULA, NOMBRE, APELLIDOS) VALUES (:matricula, :nombre, :apellido)');
             $query->execute(['matricula' => $datos['matricula'], 'nombre'=> $datos['nombre'], 'apellido' => $datos['apellido']]);
-            echo 'Insert data';
+            return true;
         } /* else {
             echo 'Error inserting data';
         } */
         catch (PDOException $e) {
             print_r('Error connection'.$e->getMessage());
-            //throw $th;
+            return false;
         }
     }
     public function delete() {
