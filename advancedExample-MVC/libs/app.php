@@ -31,11 +31,20 @@ class App {
             require_once $archivoController;
             $controller = new $url[0]; // $url[0] == controller name
             $controller->loadModel($url[0]);
-            //validate method exits and call it
-            //each method has to charge a specific view
-            if (isset($url[1])) { 
-                $controller ->{$url[1]}();
-            }else { // if there is not a method to execute you will execute render 
+
+            //validate if the method to call have parameters
+            $nparam = sizeof($url);
+            if ($nparam > 1) { //validate method exits and call it
+                if ($nparam > 2) { //There is param
+                    $param = [];
+                    for ($i=2; $i < $nparam; $i++) { 
+                        array_push($param, $url[$i]);
+                    }
+                    $controller ->{$url[1]}($param);
+                }else {
+                    $controller ->{$url[1]}();
+                }
+            }else { // if there is not a method to execute you will execute render
                 $controller->render();
             }
         } else { //call controller error manager
