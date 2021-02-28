@@ -53,6 +53,18 @@ class ConsultaModel extends Model {
         } catch (PDOException $e) {
             return false;
         }
+    }
+
+    public function delete ($id) {
+        $query = $this->db->connect()->prepare("DELETE FROM alumnos WHERE matricula = :id");
+        try {
+            $query->execute ([
+                'id' => $id,
+                ]);
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
 
     }
 }
